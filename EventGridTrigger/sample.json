@@ -1,0 +1,25 @@
+[
+{
+    "topic": "/subscriptions/xxxxxxxxxxxxxxxxxxxxxx/resourceGroups/my-eg-rg/providers/Microsoft.Storage/storageAccounts/yourstorage",
+    "subject": "/blobServices/default/containers/images/blobs/test.txt",
+    "eventType": "Microsoft.Storage.BlobCreated",
+    "eventTime": "2019-10-13T03:32:06.5207762Z",
+    "id": "798acb2d-201e-004b-0476-81e75a06fb87",
+    "data": {
+        "api": "PutBlockList",
+        "clientRequestId": "61f6cc90-bcb4-4a4a-b310-d9cd05a1f050",
+        "requestId": "798acb2d-201e-004b-0476-81e75a000000",
+        "eTag": "0x8D74F8DEC08F5D2",
+        "contentType": "text/plain",
+        "contentLength": 0,
+        "blobType": "BlockBlob",
+        "url": "https://xxxxxxxxxxxxxxxxxxxxx.blob.core.windows.net/images/test.txt",
+        "sequencer": "00000000000000000000000000001873000000000477505a",
+        "storageDiagnostics": {
+            "batchId": "9a430255-6006-002a-0076-81a385000000"
+        }
+    },
+    "dataVersion": "",
+    "metadataVersion": "1"
+}
+]
