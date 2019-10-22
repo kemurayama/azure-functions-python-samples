@@ -19,7 +19,6 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         except ValueError:
             pass
         else:
-            name = req_body.get('name')
             container = req_body.get('container')
             filename = req_body.get('file')
 
