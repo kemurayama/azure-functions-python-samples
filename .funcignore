@@ -1,6 +1,9 @@
 .git*
 .vscode
 local.settings.json
+local.settings.test.json
 test
 .venv
 .azcli
+LICENSE
+README.md

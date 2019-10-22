@@ -125,6 +125,7 @@ dmypy.json
 # Azure Functions artifacts
 .vscode
 .python_packages
+.python-version
 .DS_Store
 bin
 obj
