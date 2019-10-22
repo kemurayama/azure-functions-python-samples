@@ -11,6 +11,7 @@ You need below resources.
 - Azure Blob Storage SDK
 
 In the Function, used [this SDK version](https://pypi.org/project/azure-storage-blob/12.0.0b4/) in order to use `aio`. 
+
 `pip install azure-storage-blob==12.0.0b4` 
 
 ## HTTPTrigger with Managed ID for Storage Authentication
