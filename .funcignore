@@ -1,9 +1,11 @@
+.azcli
+.devcontainer
 .git*
+.venv
 .vscode
 local.settings.json
 local.settings.test.json
 test
-.venv
-.azcli
+deployment
 LICENSE
 README.md

@@ -1,7 +1,9 @@
 import os
 import json
 import logging
-import aiofiles
+from pathlib import Path
+from urllib.parse import urlparse
+
 import azure.functions as func
 from azure.storage.blob.aio import BlobClient
 
@@ -15,20 +17,21 @@ async def main(event: func.EventGridEvent):
     })
 
     logging.info('Python EventGrid trigger processed an event: %s', result)
-    result = json.loads(result)
+    try:
+        result = json.loads(result)
 
-    data = result['data']
-    url = data['url']
-    url = url.split('/')
+        data = result['data']
+        url = urlparse(data['url'])
+        p_file = Path(url.path)
+        filename = p_file.name
+        container = p_file.parent.name
+        connection = os.environ['STORAGE_CONNECTION']
 
-    connection = os.environ['STORAGE']
-    container = url[-2]
-    filename = url[-1]
+        async with BlobClient.from_connection_string(connection, container_name=container, blob_name=filename) as blob:
+            stream = await blob.download_blob()
+            data = await stream.content_as_text()
+            logging.info(f'Content is {data}')
 
-    
-    async with BlobClient.from_connection_string(connection, container_name=container, blob_name=filename) as blob:
-        stream = await blob.download_blob()
-        data = await stream.content_as_bytes()
-        async with aiofiles.open("./BlockDestination.txt", "wb") as my_blob:
-            await my_blob.write(data)
-            logging.info('finishied download my blob')
+    except Exception as e:
+        logging.exception(f"failed to load EventGrid request:{e}")
+ 
