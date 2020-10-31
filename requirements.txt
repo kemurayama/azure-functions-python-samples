@@ -1,4 +1,4 @@
-azure-functions
-azure-storage-blob
-azure-identity
-aiohttp
+azure-functions >= 1.4.0
+azure-storage-blob >= 12.5.0
+azure-identity >= 1.4.1
+aiohttp >= 3.7.2
