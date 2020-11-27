@@ -123,22 +123,14 @@ dmypy.json
 .pyre/
 
 # Azure Functions artifacts
-
-.python_packages
-.python-version
 bin
 obj
 appsettings.json
 local.settings.json
-python.zip
-deployment
-.devcontainer
-.vscode
+.python_packages
 
-# VS Code Files
-
-.DS_Store
 .venv
 .vscode
 *.zip
 manifest.json
+.devcontainer
